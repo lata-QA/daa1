@@ -1,3 +1,12 @@
+<p><h3>pseudocode</h3></p>
+while !S.isEmpty() 
+do e ←S.removeFirst() 
+P.insertItem(e, e) 
+while P is not empty 
+do e ←P.removeMinElement() 
+S.insertLast(e)
+
+<p><h3>code></h3></p>
 #include <iostream>
 #include <string>
 #include <memory>
