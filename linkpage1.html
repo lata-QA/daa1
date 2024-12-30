@@ -88,6 +88,46 @@
     
 <div class="section">
         <h3>1.Balanced Trees (AVL Trees)</h3>
+          <h4><b>Algorithm for AVL trees</b></h4>
+           <p><ul><li>if current == NULL then 
+\\Nothing to balance 
+return current 
+end 
+if computeHeightFromChildren(current) 
+\\update current’s height 
+leftH = current→left→height 
+rightH = current→right→height 
+if leftH > rightH +1 then 
+\\Left subtree is too tall left
+leftH = current→left→left→height 
+leftrightH = current→left→right→height 
+if leftleftH >= leftrightH then 
+return rightRotate(current) 
+else return leftRightRotate(current) 
+end 
+if 
+end 
+if 
+if rightH > leftH +1 then 
+\\left-outer grandchild is taller \\left-inner grandchild is taller \\Right subtree is too tall r
+ightleftH = current→right→left→height rightrightH = current→right→right→height 
+if rightrightH >= rightleftH then return leftRotate(current) 
+else 
+return rightLeftRotate(current) 
+end 
+if 
+ if \\right-outer grandchild is taller \\right-inner grandchild is taller 
+ return current \\No rotation, so root is the same end function  
+ rightRotate(current) newRoot = current → left current → left = newRoot → right newRoot → right = current 
+ computeHeightFromChildren(current) 
+ computeHeightFromChildren(newRoot) 
+ return newRoot 
+end 
+ function leftRightRotate(current) current → left = leftRotate(current → left) 
+ return rightRotate(current) 
+ end function 
+ function computeHeightFromChildren(current) leftH = current → left → height rightH = current → right → height height = 1+max(leftH,rightH) 
+ end function </li></ul>
         <p><strong>Use Case:</strong> Operations such as insertion and traversal are efficient, with 
             O(logn) complexity due to the self-balancing nature of AVL Trees.</p>
         <p><strong>Example Implementation:</strong></p>
@@ -107,6 +147,18 @@
     
     <div class="section">
         <h3>2. Priority Queue</h3>
+        <h4><b>Algorithm for Priority Queue </b></h4>
+        <p><ul><li>
+            Algorithm PriorityQueueSort(S, P): 
+Input: A sequence S storing n elements, on which a total order relation is defined, and a Priority Queue P that compares keys with the same relation 
+Output: The Sequence S sorted by the total order relation
+ while !S.isEmpty() 
+ do e ←S.removeFirst() 
+ P.insertItem(e, e) 
+ while P is not empty 
+ do e ←P.removeMinElement() 
+ S.insertLast(e)
+        </li></ul>
         <p><strong>Use Case:</strong> Process applications based on priority (e.g., merit, reservation, or first-come-first-serve).</p>
         <p><strong>Example Implementation:</strong></p>
         <ul>
@@ -123,6 +175,17 @@
 
     <div class="section">
         <h3>3. Hash Table</h3>
+        <h4>Algorithm for Hash Table</h4>
+        <p><ul><li>
+            Chained-Hash-Insert(T, k)
+  insert x at the head of linked list T[h(k)]
+
+Chained-Hash-Search(T, k)
+  search for an element with key k in linked list T[h(k)]
+
+Chained-Hash-Delete(T, k)
+  delete x from the linked list T[h(k)]
+        </li></ul>
         <p><strong>Use Case:</strong> Efficiently store and retrieve student records.</p>
         <p><strong>Example Implementation:</strong></p>
         <ul>
@@ -136,5 +199,4 @@
         </ul>
         <a href="facultybyHASH.txt" target="_blank">click here</a>
     </div>
-
 </section>
