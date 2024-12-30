@@ -89,45 +89,45 @@
 <div class="section">
         <h3>1.Balanced Trees (AVL Trees)</h3>
           <h4><b>Algorithm for AVL trees</b></h4>
-           <ul><li>if current == NULL then 
-\\Nothing to balance 
-return current 
-end 
-if computeHeightFromChildren(current) 
-\\update current’s height 
-leftH = current→left→height 
-rightH = current→right→height 
-if leftH > rightH +1 then 
-\\Left subtree is too tall left
-leftH = current→left→left→height 
-leftrightH = current→left→right→height 
-if leftleftH >= leftrightH then 
-return rightRotate(current) 
-else return leftRightRotate(current) 
-end 
-if 
-end 
-if 
-if rightH > leftH +1 then 
-\\left-outer grandchild is taller \\left-inner grandchild is taller \\Right subtree is too tall r
-ightleftH = current→right→left→height rightrightH = current→right→right→height 
-if rightrightH >= rightleftH then return leftRotate(current) 
-else 
-return rightLeftRotate(current) 
-end 
-if 
- if \\right-outer grandchild is taller \\right-inner grandchild is taller 
- return current \\No rotation, so root is the same end function  
- rightRotate(current) newRoot = current → left current → left = newRoot → right newRoot → right = current 
- computeHeightFromChildren(current) 
- computeHeightFromChildren(newRoot) 
- return newRoot 
-end 
- function leftRightRotate(current) current → left = leftRotate(current → left) 
- return rightRotate(current) 
- end function 
- function computeHeightFromChildren(current) leftH = current → left → height rightH = current → right → height height = 1+max(leftH,rightH) 
- end function </li></ul>
+           <ul><li>if current == NULL then</li>
+<li>\\Nothing to balance </li>
+<li>return current </li>
+<li>end </li>
+<li>if computeHeightFromChildren(current) </li>
+<li>\\update current’s height </li>
+<li>leftH = current→left→height </li>
+<li>rightH = current→right→height </li>
+<li>if leftH > rightH +1 then </li>
+<li>\\Left subtree is too tall left</li>
+<li>leftH = current→left→left→height </li>
+<li>leftrightH = current→left→right→height </li>
+<li>if leftleftH >= leftrightH then </li>
+<li>return rightRotate(current) </li>
+<li>else return leftRightRotate(current) </li>
+<li>end </li>
+<li>if </li>
+<li>end </li>
+<li>if </li>
+<li>if rightH > leftH +1 then </li>
+<li>\\left-outer grandchild is taller \\left-inner grandchild is taller \\Right subtree is too tall </li>
+               <li>rightleftH = current→right→left→height rightrightH = current→right→right→height </li>
+<li>if rightrightH >= rightleftH then return leftRotate(current) </li>
+<li>else </li>
+<li>return rightLeftRotate(current) </li>
+<li>end </li>
+<li>if </li>
+ <li>if \\right-outer grandchild is taller \\right-inner grandchild is taller </li>
+ <li>return current \\No rotation, so root is the same end function  </li>
+ <li>rightRotate(current) newRoot = current → left current → left = newRoot → right newRoot → right = current </li>
+ <li>computeHeightFromChildren(current) </li>
+ <li>computeHeightFromChildren(newRoot) </li>
+ <li>return newRoot </li>
+<li>end </li>
+<li>function leftRightRotate(current) current → left = leftRotate(current → left) </li>
+<li>return rightRotate(current) </li>
+<li>end function </li>
+ <li>function computeHeightFromChildren(current) leftH = current → left → height rightH = current → right → height height = 1+max(leftH,rightH) </li>
+ <li>end function </li></ul>
         <p><strong>Use Case:</strong> Operations such as insertion and traversal are efficient, with 
             O(logn) complexity due to the self-balancing nature of AVL Trees.</p>
         <p><strong>Example Implementation:</strong></p>
