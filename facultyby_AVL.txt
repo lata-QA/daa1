@@ -1,10 +1,21 @@
 <p><h3>pseudocode</h3></p>
-while !S.isEmpty() 
-do e ←S.removeFirst() 
-P.insertItem(e, e) 
-while P is not empty 
-do e ←P.removeMinElement() 
-S.insertLast(e)
+function JoinRightAVL(TL, k, TR)
+    (l, k', c) = expose(TL)
+    if (Height(c) <= Height(TR)+1)
+       T' = Node(c, k, TR)
+       if (Height(T') <= Height(l)+1) then return Node(l, k', T')
+       else return rotateLeft(Node(l, k', rotateRight(T')))
+    else 
+        T' = JoinRightAVL(c, k, TR)
+        T'' = Node(l, k', T')
+        if (Height(T') <= Height(l)+1) return T''
+        else return rotateLeft(T'')
+function JoinLeftAVL(TL, k, TR)
+  /* symmetric to JoinRightAVL */
+function Join(TL, k, TR)
+    if (Height(TL)>Height(TR)+1) return JoinRightAVL(TL, k, TR)
+    if (Height(TR)>Height(TL)+1) return JoinLeftAVL(TL, k, TR)
+    return Node(TL, k, TR)
 
 <p><h3>code></h3></p>
 #include <iostream>
